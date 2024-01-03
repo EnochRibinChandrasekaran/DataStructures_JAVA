@@ -1,4 +1,4 @@
-package implementation;
+package implementation.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
