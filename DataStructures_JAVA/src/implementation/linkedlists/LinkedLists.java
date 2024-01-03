@@ -90,4 +90,18 @@ public class LinkedLists<T extends Comparable<T>> implements List<T> {
         return stepNode;
 
     }
+
+    @Override //O(N) in place
+    public void reverse() {
+        Node<T> currentNode = root;
+        Node<T> prev = null;
+        Node<T> next = null;
+        while (currentNode != null) {
+            next = currentNode.getNextNode();
+            currentNode.setNextNode(prev);
+            prev = currentNode;
+            currentNode = next;
+        }
+        root = prev;
+    }
 }

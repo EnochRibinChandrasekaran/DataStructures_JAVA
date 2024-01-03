@@ -12,4 +12,6 @@ public interface List<T> {
 
     public Node getMiddleNode();
 
+    public void reverse();
+
 }

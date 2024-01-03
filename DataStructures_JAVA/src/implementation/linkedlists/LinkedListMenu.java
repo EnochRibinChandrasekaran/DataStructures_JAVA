@@ -11,7 +11,7 @@ public class LinkedListMenu {
 
         linkedList.traverse();
 
-        System.out.println("Size : " +linkedList.size());
+        System.out.println("Size : " + linkedList.size());
 
         linkedList.remove(1);
         linkedList.traverse();
@@ -24,8 +24,8 @@ public class LinkedListMenu {
 
         linkedList.traverse();
         System.out.println("middle node :" + linkedList.getMiddleNode());
-
-
+        linkedList.reverse();
+        linkedList.traverse();
 
 
     }
