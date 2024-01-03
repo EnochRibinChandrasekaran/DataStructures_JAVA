@@ -16,10 +16,16 @@ public class LinkedListMenu {
         linkedList.remove(1);
         linkedList.traverse();
 
+        System.out.println("Nodes :");
         linkedList.insert(12);
-        linkedList.remove(2);
+        linkedList.insert(11);
+        linkedList.insert(110);
+        linkedList.insert(1111);
 
         linkedList.traverse();
+        System.out.println("middle node :" + linkedList.getMiddleNode());
+
+
 
 
     }

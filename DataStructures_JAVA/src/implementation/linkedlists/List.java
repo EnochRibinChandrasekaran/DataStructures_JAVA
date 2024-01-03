@@ -9,4 +9,7 @@ public interface List<T> {
 
     public int size();
 
+
+    public Node getMiddleNode();
+
 }
