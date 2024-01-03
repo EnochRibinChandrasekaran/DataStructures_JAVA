@@ -7,10 +7,13 @@ public class LinkedLists<T extends Comparable<T>> implements List<T> {
 
     @Override
     public void insert(T data) {
+        //O(1)
         if (root == null) {
             root = new Node<>(data);
         } else {
+            //O(1)
             insertAtTheBeginning(data);
+            //O(N)
 //            insertAtTheEnd(data,root);
         }
         noOfItems++;
@@ -37,9 +40,11 @@ public class LinkedLists<T extends Comparable<T>> implements List<T> {
         Node<T> currentNode = root;
         if (root == null) return;
         else if (currentNode.getData().compareTo(data) == 0) {
+            //O(1)
             root = currentNode.getNextNode();
             noOfItems--;
         } else {
+            //O(N)
             Node<T> previousNode = null;
             Node<T> nextNode = root;
             while (currentNode != null) {
@@ -58,7 +63,7 @@ public class LinkedLists<T extends Comparable<T>> implements List<T> {
 
     }
 
-    @Override
+    @Override//O(N)
     public void traverse() {
         Node<T> actualNode = root;
         while (actualNode != null) {
