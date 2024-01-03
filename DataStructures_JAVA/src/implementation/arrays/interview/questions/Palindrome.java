@@ -1,4 +1,4 @@
-package interview.questions;
+package implementation.arrays.interview.questions;
 
 //For example: radar or madam
 //Your task is to design an optimal algorithm for checking whether a given string is palindrome or not!

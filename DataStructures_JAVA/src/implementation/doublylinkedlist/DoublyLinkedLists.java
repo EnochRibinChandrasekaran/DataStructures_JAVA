@@ -6,7 +6,7 @@ public class DoublyLinkedLists<T extends Comparable<T>> implements List<T> {
 
     @Override
     //O(N) for inserting & removing in arbitrary position
-    //O(1) for inserting and removing in end 
+    //O(1) for inserting and removing in end
     public void insert(T data) {
         Node<T> newNode = new Node<>(data);
         if (tailNode == null) {
