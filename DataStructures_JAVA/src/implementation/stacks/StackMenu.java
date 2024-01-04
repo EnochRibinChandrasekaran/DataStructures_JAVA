@@ -1,5 +1,6 @@
 package implementation.stacks;
 
+import implementation.stacks.arrays.StackArray;
 import implementation.stacks.linkedlist.Stacks;
 
 public class StackMenu {
@@ -15,6 +16,19 @@ public class StackMenu {
 
         while(!intStack.isEmpty()){
             System.out.println("Pop :" + intStack.pop());
+        }
+        System.out.println("---------Array Implementation Implementation--------");
+        StackArray<Integer> arrStack = new StackArray<>();
+        arrStack.push(1);
+        arrStack.push(2);
+        arrStack.push(3);
+        arrStack.push(4);
+        arrStack.push(5);
+        System.out.println("Peek :" + arrStack.peek());
+        System.out.println("Size :" + arrStack.isEmpty());
+
+        while(!arrStack.isEmpty()){
+            System.out.println("Pop :" + arrStack.pop());
         }
     }
 

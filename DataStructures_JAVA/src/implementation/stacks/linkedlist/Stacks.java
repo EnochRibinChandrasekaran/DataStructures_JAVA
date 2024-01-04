@@ -1,6 +1,6 @@
 package implementation.stacks.linkedlist;
 
-//every operation takes O(1) constant time complexity 
+//every operation takes O(1) constant time complexity
 public class Stacks<T> {
     int count;
     Node<T> head;
