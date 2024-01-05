@@ -24,7 +24,7 @@ public class QuickUnionUF {
         sz= new int[N];
         for (int i = 0; i < N; i++) {
         id[i] = i;
-        sz[i] =1;
+        sz[i] =i;
         }
     }
 
