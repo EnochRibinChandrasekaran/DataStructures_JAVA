@@ -1,6 +1,8 @@
 package algorithms.unionfind;
 
 
+import java.util.Arrays;
+
 /*Time Complexity
 Algorithm: quick-union
 initialize: N
@@ -9,11 +11,16 @@ union: N
 lazy approach - because it changes only the root value of the ID the instead of all the element it is union.
 * */
 public class QuickUnionUF {
-    private int[] id;
+    public int[] id;
+    public int[] sz;
 
     public QuickUnionUF(int N) {
         id = new int[N];
-        for (int i = 0; i < N; i++) id[i] = i;
+        sz= new int[N];
+        for (int i = 0; i < N; i++) {
+        id[i] = i;
+        sz[i] =1;
+        }
     }
 
     private int root(int i) {
@@ -27,8 +34,17 @@ public class QuickUnionUF {
 
     public void union(int p, int q) {
         int i = root(p);
+        System.out.println("root of :"+ p + "is :" + i);
         int j = root(q);
-        id[i] = j;
+        System.out.println("root of :"+ q + "is :" + j);
+        if(i==j)return;
+        if(sz[i]<sz[j]){
+            id[i] = j;
+            sz[j] += sz[i];
+        }else{
+            id[j] = i;
+            sz[i] += sz[j];
+        }
     }
 
 
@@ -39,32 +55,38 @@ public class QuickUnionUF {
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
         qf.union(0, 1);
         System.out.println("Array :");
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
         qf.union(2, 0);
         System.out.println("Array :");
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
         qf.union(3, 4);
         System.out.println("Array :");
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
         qf.union(5, 4);
         System.out.println("Array :");
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
         qf.union(6, 5);
         System.out.println("Array :");
         for (int i = 0; i < 7; i++) {
             System.out.println(i + " | " + qf.id[i]);
         }
-        System.out.println("Is connected : 4,1" + qf.connected(4, 1));
+        System.out.println("Size Array :"+ Arrays.toString(qf.sz));
+        System.out.println("Is connected : 4,5" + qf.connected(4, 5));
     }
 }
 
