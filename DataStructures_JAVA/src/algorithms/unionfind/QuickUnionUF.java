@@ -9,6 +9,11 @@ initialize: N
 find: N
 union: N
 lazy approach - because it changes only the root value of the ID the instead of all the element it is union.
+WQUUF
+init : N
+find : lgN
+union: lgN
+much faster near to constant time
 * */
 public class QuickUnionUF {
     public int[] id;
